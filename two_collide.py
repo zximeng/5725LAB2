@@ -16,7 +16,7 @@ GPIO.setup(27,GPIO.IN,pull_up_down = GPIO.PUD_UP)
 pygame.init()
 size = width, height = 320, 240 
 speed = [2,2]
-speed1 = [-2,-2] 
+speed1 = [-1,-1] 
 black = 0, 0, 0
 screen = pygame.display.set_mode(size)
 ball = pygame.image.load("magic_ball.png")
@@ -25,7 +25,7 @@ ballrect.left = ballrect.bottom = 0
 
 ball1 = pygame.image.load("soccer_ball.png")
 ballrect1 = ball1.get_rect()
-ballrect1.right = ballrect.top = 240
+ballrect1.right = ballrect1.top = 200
 start = time.time()
 flag = True  # global flag
 def GPIO19_callback(channel):
