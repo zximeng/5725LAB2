@@ -16,21 +16,22 @@ GPIO.setup(27,GPIO.IN,pull_up_down = GPIO.PUD_UP)
 pygame.init()
 size = width, height = 320, 240 
 speed = [2,2]
-speed1 = [-1,-1] 
+speed1 = [1,1] 
 black = 0, 0, 0
 screen = pygame.display.set_mode(size)
 ball = pygame.image.load("magic_ball.png")
 ballrect = ball.get_rect()
-ballrect.left = ballrect.bottom = 5
+ballrect.left = ballrect.bottom = 20
 
 ball1 = pygame.image.load("soccer_ball.png")
 ballrect1 = ball1.get_rect()
-ballrect1.right = ballrect1.top = 150
+ballrect1.left = ballrect.bottom = 150
+
 start = time.time()
 flag = True  # global flag
-def GPIO27_callback(channel):
+def GPIO19_callback(channel):
     flag = False
-GPIO.add_event_detect(27, GPIO.FALLING, callback=GPIO27_callback, bouncetime=200)
+GPIO.add_event_detect(27, GPIO.FALLING, callback=GPIO19_callback, bouncetime=200)
 
 while (flag):    
     ballrect = ballrect.move(speed)    
@@ -51,6 +52,6 @@ while (flag):
 	screen.fill(black)               # Erase the Work space   
 	screen.blit(ball, ballrect)   # Combine Ball surface with workspace 
 	screen.blit(ball1, ballrect1)
-	if(not time.time() - start < 10):
+	if(not time.time() - start < 3):
 		flag = False
 	pygame.display.flip()        # display workspace on screen
