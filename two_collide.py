@@ -43,7 +43,7 @@ while (flag):
 		speed1[0] = -speed1[0]    
     if ballrect1.top < 0 or ballrect1.bottom > height:     
 		speed1[1] = -speed1[1]
-    if ballrect.colliderect():
+    if ballrect.colliderect(ballrect1):
         speed1[1] = -speed1[1]
         speed1[0] = -speed1[0]
         speed[0] = -speed[0]
