@@ -28,7 +28,7 @@ ballrect1 = ball1.get_rect()
 ballrect1.left = ballrect.bottom = 100
 start = time.time()
 flag = True  # global flag
-def GPIO19_callback(27):
+def GPIO19_callback(channel):
     flag = False
 GPIO.add_event_detect(27, GPIO.FALLING, callback=GPIO19_callback, bouncetime=200)
 
