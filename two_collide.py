@@ -33,15 +33,15 @@ def GPIO19_callback(channel):
 GPIO.add_event_detect(27, GPIO.FALLING, callback=GPIO19_callback, bouncetime=200)
 
 while (flag):    
-	ballrect = ballrect.move(speed)    
-	if ballrect.left < 0 or ballrect.right > width:       
+    ballrect = ballrect.move(speed)    
+    if ballrect.left < 0 or ballrect.right > width:       
 		speed[0] = -speed[0]    
-	if ballrect.top < 0 or ballrect.bottom > height:     
+    if ballrect.top < 0 or ballrect.bottom > height:     
 		speed[1] = -speed[1]
-	ballrect1 = ballrect1.move(speed1)    
-	if ballrect1.left < 0 or ballrect1.right > width:       
+    ballrect1 = ballrect1.move(speed1)    
+    if ballrect1.left < 0 or ballrect1.right > width:       
 		speed1[0] = -speed1[0]    
-	if ballrect1.top < 0 or ballrect1.bottom > height:     
+    if ballrect1.top < 0 or ballrect1.bottom > height:     
 		speed1[1] = -speed1[1]
     if ballrect.colliderect():
         speed1[1] = -speed1[1]
